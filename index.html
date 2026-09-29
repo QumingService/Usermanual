@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>사용설명서</title>
 <style>
+@font-face{font-family:"SUITE";font-weight:500;src:url("fonts/SUITE-Medium.woff") format("woff")}
+@font-face{font-family:"SUITE";font-weight:800;src:url("fonts/SUITE-ExtraBold.woff") format("woff")}
 :root{--bg:#fff;--fg:#327ddc;--muted:#327ddc;--line:#327ddc;--soft:#f3f3f3;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px);scroll-behavior:smooth}
 *,*::before,*::after{box-sizing:inherit}
@@ -57,9 +59,7 @@ footer{margin-top:72px;border-top:1px solid #000;padding:28px 0 40px;color:#555;
 <p class="empty wrap" id="empty">검색 결과가 없습니다. 다른 모델명으로 검색해 보세요.</p>
 <footer><div class="wrap">찾으시는 제품의 사용설명서가 없을 경우 고객만족센터로 문의해 주세요.<div class="cs">고객만족센터 1800-8888</div></div></footer>
 
-<!-- ▼▼▼ 이 주소만 구글 스프레드시트 CSV 게시 링크로 바꿔주세요 ▼▼▼ -->
 <script>const CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTbJd8Sx6G6G_eu-_dhz8B2RwYUMqLtoZrVY4NWhzgAYrNdKQFjsrF5PB6wXb-N7OrTlhS0sc1s6i3v/pub?gid=1349063332&single=true&output=csv";</script>
-<!-- ▲▲▲ -->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
 <script>
@@ -74,7 +74,7 @@ const ICONS={
 const esc=s=>String(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const main=document.getElementById('main');
 const navEl=document.getElementById('nav');
-let CATS=[]; // [{name, items:[...]}]
+let CATS=[];
 
 function group(rows){
   const order=[]; const map={};
